@@ -1,0 +1,73 @@
+analyzer:
+  exclude:
+    - lib/generated/**
+  # strong-mode:
+  # implicit-casts: false
+  # implicit-dynamic: false
+  errors:
+    todo: ignore
+linter:
+  rules:
+    - avoid_empty_else
+    - avoid_print
+    - await_only_futures
+    - close_sinks
+    - avoid_init_to_null
+    - avoid_null_checks_in_equality_operators
+    - cancel_subscriptions
+    - annotate_overrides
+    - avoid_types_as_parameter_names
+    - avoid_renaming_method_parameters
+    - empty_statements
+    - always_declare_return_types
+    - always_require_non_null_named_parameters
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_classes_with_only_static_members
+    - avoid_return_types_on_setters
+    - control_flow_in_finally
+    - camel_case_types
+    - non_constant_identifier_names
+    - curly_braces_in_flow_control_structures
+    - avoid_returning_null_for_void
+    - empty_catches
+    - empty_constructor_bodies
+    - no_adjacent_strings_in_list
+    - no_duplicate_case_values
+    - file_names
+    - implementation_imports
+    - library_names
+    - library_prefixes
+    - prefer_adjacent_string_concatenation
+    - prefer_asserts_in_initializer_lists
+    - prefer_collection_literals
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_equal_for_default_values
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_foreach
+    - prefer_function_declarations_over_variables
+    - prefer_generic_function_type_aliases
+    - prefer_if_null_operators
+    - prefer_initializing_formals
+    - prefer_inlined_adds
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_iterable_whereType
+    - prefer_null_aware_operators
+    - prefer_spread_collections
+    - recursive_getters
+    - sort_unnamed_constructors_first
+    - type_init_formals
+    - unnecessary_brace_in_string_interps
+    - unnecessary_const
+    - unnecessary_getters_setters
+    - unnecessary_new
+    - unnecessary_null_aware_assignments
+    - unnecessary_null_in_if_null_operators
+    - unnecessary_overrides
+    - unnecessary_parenthesis
+    - unnecessary_this
+    - use_full_hex_values_for_flutter_colors
+    - valid_regexps
+    - flutter_style_todos
