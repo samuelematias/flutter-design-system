@@ -4,6 +4,11 @@ A new Flutter project.
 
 > Using this Flutter Version /Channel: `Flutter 1.20.0-1.0.pre.170 • channel master •`
 
+```echo
+    flutter channel master
+    flutter upgrade
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
