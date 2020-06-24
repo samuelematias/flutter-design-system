@@ -17,7 +17,7 @@ class AdaptiveScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, dimens) {
       if (dimens.maxWidth >= kDesktopBreakpoint) {
-        final _tabs = <Widget>[];
+        final List<Widget> _tabs = [];
         for (var i = 0; i < tabs.length; i++) {
           final Color textColor = selectedIndex == i
               ? Theme.of(context)
@@ -32,18 +32,24 @@ class AdaptiveScaffold extends StatelessWidget {
               ? Theme.of(context).navigationRailTheme.selectedIconTheme.color
               : Theme.of(context).navigationRailTheme.unselectedIconTheme.color;
 
-          _tabs.add(ListTile(
-            selected: selectedIndex == i,
-            title: Text(tabs[i].title,
-                style: TextStyle(
-                  color: textColor,
-                )),
-            leading: Icon(
-              tabs[i].iconData,
-              color: iconColor,
+          _tabs.addAll([
+            Visibility(
+              visible: i == 0,
+              child: showLogo(paddingTop: 20.0),
             ),
-            onTap: () => onSelectionChanged(i),
-          ));
+            ListTile(
+              selected: selectedIndex == i,
+              title: Text(tabs[i].title,
+                  style: TextStyle(
+                    color: textColor,
+                  )),
+              leading: Icon(
+                tabs[i].iconData,
+                color: iconColor,
+              ),
+              onTap: () => onSelectionChanged(i),
+            ),
+          ]);
         }
         return Material(
           child: Row(
@@ -73,6 +79,7 @@ class AdaptiveScaffold extends StatelessWidget {
           child: Row(
             children: [
               NavigationRail(
+                leading: showLogo(),
                 labelType: NavigationRailLabelType.all,
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (val) => onSelectionChanged(val),
@@ -98,11 +105,22 @@ class AdaptiveScaffold extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           onTap: (val) => onSelectionChanged(val),
-          // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           items: _tabs,
         ),
       );
     });
+  }
+
+  Widget showLogo({double paddingTop = 8.0}) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 8.0,
+        top: paddingTop,
+        right: 8.0,
+        bottom: 8.0,
+      ),
+      child: FlutterLogo(size: 50, colors: Colors.deepPurple),
+    );
   }
 
   Widget buildBody(int selectedIndex, List<TabItem> tabs) {
