@@ -24,7 +24,6 @@ class AppTheme {
   static final Color _darkGrey900 = Colors.grey[900];
 
   static final ThemeData lightTheme = ThemeData(
-    primarySwatch: _accentColor,
     navigationRailTheme: NavigationRailThemeData(
       backgroundColor: _lightWhite,
       selectedIconTheme: IconThemeData(color: _accentColor),
@@ -35,6 +34,10 @@ class AppTheme {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       unselectedIconTheme: IconThemeData(color: _lightUnselectedIconColor),
       unselectedItemColor: _lightBlack,
+    ),
+    appBarTheme: AppBarTheme(
+      color: _accentColor,
+      iconTheme: IconThemeData(color: _lightBlack),
     ),
   );
 
