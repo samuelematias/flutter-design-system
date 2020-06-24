@@ -1,4 +1,5 @@
 import 'package:designsystem/src/core/storage/storage.dart';
+import 'package:designsystem/src/core/theme/app_theme.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -38,11 +39,8 @@ class _MyAppState extends State<MyApp> {
             return MaterialApp(
               debugShowCheckedModeBanner: _settings.isFresh,
               title: 'Design System',
-              theme: ThemeData(
-                primarySwatch: Colors.deepPurple,
-                visualDensity: VisualDensity.adaptivePlatformDensity,
-              ),
-              darkTheme: ThemeData.dark(),
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
               themeMode: _settings.isDark ? ThemeMode.dark : ThemeMode.light,
               home: CustomTabBar(),
             );
