@@ -14,6 +14,7 @@ class OverviewPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          Text('LOL'),
           SwitchListTile(
             title: Text('Dark mode'),
             value: _settings.isDark,
