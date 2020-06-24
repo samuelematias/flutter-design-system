@@ -32,6 +32,8 @@ class AppTheme {
       unselectedLabelTextStyle: TextStyle(color: _lightBlack),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(color: _accentColor),
+      selectedItemColor: _accentColor,
       unselectedIconTheme: IconThemeData(color: _lightUnselectedIconColor),
       unselectedItemColor: _lightBlack,
     ),
