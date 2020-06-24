@@ -1,4 +1,4 @@
-import 'package:designsystem/src/ui/home/home_page.dart';
+import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: CustomTabBar(),
     );
   }
 }
