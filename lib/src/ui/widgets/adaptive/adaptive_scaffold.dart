@@ -19,10 +19,29 @@ class AdaptiveScaffold extends StatelessWidget {
       if (dimens.maxWidth >= kDesktopBreakpoint) {
         final _tabs = <Widget>[];
         for (var i = 0; i < tabs.length; i++) {
+          final Color textColor = selectedIndex == i
+              ? Theme.of(context)
+                  .navigationRailTheme
+                  .selectedLabelTextStyle
+                  .color
+              : Theme.of(context)
+                  .navigationRailTheme
+                  .unselectedLabelTextStyle
+                  .color;
+          final Color iconColor = selectedIndex == i
+              ? Theme.of(context).navigationRailTheme.selectedIconTheme.color
+              : Theme.of(context).navigationRailTheme.unselectedIconTheme.color;
+
           _tabs.add(ListTile(
             selected: selectedIndex == i,
-            title: Text(tabs[i].title),
-            leading: Icon(tabs[i].iconData),
+            title: Text(tabs[i].title,
+                style: TextStyle(
+                  color: textColor,
+                )),
+            leading: Icon(
+              tabs[i].iconData,
+              color: iconColor,
+            ),
             onTap: () => onSelectionChanged(i),
           ));
         }
@@ -30,6 +49,7 @@ class AdaptiveScaffold extends StatelessWidget {
           child: Row(
             children: [
               Container(
+                color: Theme.of(context).navigationRailTheme.backgroundColor,
                 width: kSideMenuWidth,
                 child: ListView(children: _tabs),
               ),
@@ -53,15 +73,6 @@ class AdaptiveScaffold extends StatelessWidget {
           child: Row(
             children: [
               NavigationRail(
-                selectedIconTheme: IconThemeData(
-                  color: Theme.of(context).accentColor,
-                ),
-                selectedLabelTextStyle: TextStyle(
-                  color: Theme.of(context).accentColor,
-                ),
-                unselectedIconTheme: IconThemeData(
-                  color: Colors.grey,
-                ),
                 labelType: NavigationRailLabelType.all,
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (val) => onSelectionChanged(val),
@@ -87,7 +98,7 @@ class AdaptiveScaffold extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           onTap: (val) => onSelectionChanged(val),
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           items: _tabs,
         ),
       );
