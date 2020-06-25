@@ -7,11 +7,13 @@ class CustomAppBar extends StatelessWidget {
   final String pageTitle;
   final Widget child;
   final GestureTapCallback onClickBackButton;
+  final bool hideSwitchMode;
 
   const CustomAppBar({
     @required this.pageTitle,
     @required this.child,
     this.onClickBackButton,
+    this.hideSwitchMode = false,
   });
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,14 @@ class CustomAppBar extends StatelessWidget {
         title: Text(pageTitle),
         elevation: 0,
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: DayNightSwitcherIcon(
-              isDarkModeEnabled: _settings.isDark,
-              onStateChanged: _settings.updateIsDark,
+          Visibility(
+            visible: !hideSwitchMode,
+            child: Padding(
+              padding: EdgeInsets.only(right: 16.0),
+              child: DayNightSwitcherIcon(
+                isDarkModeEnabled: _settings.isDark,
+                onStateChanged: _settings.updateIsDark,
+              ),
             ),
           ),
         ],
