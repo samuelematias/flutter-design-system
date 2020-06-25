@@ -9,11 +9,12 @@ class OverviewPage extends StatelessWidget {
     final _settings = Provider.of<Settings>(context, listen: false);
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Overview'),
-          elevation: 0,
-        ),
-        body: _darkMode(_settings));
+      appBar: AppBar(
+        title: Text('Overview'),
+        elevation: 0,
+      ),
+      body: _darkMode(_settings),
+    );
   }
 
   Widget _darkMode(Settings settings) => SizedBox.expand(
