@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
 
-  static final Color _iconColor = Colors.redAccent.shade200;
+  static final Color _iconColor = Colors.white;
   static final Color _accentColor = Colors.deepPurple;
 
   static const Color _lightWhite = Colors.white;
@@ -39,7 +39,7 @@ class AppTheme {
     ),
     appBarTheme: AppBarTheme(
       color: _accentColor,
-      iconTheme: IconThemeData(color: _lightBlack),
+      iconTheme: IconThemeData(color: _lightWhite),
     ),
   );
 
