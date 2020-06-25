@@ -7,6 +7,7 @@ class IntroductionPage extends StatelessWidget {
   const IntroductionPage({
     this.hideSwitchMode = false,
   });
+
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(

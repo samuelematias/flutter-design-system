@@ -3,6 +3,7 @@ import 'package:designsystem/src/ui/overview/helper/overview_items.dart';
 import 'package:designsystem/src/ui/overview/introduction/introduction_page.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class OverviewPage extends StatefulWidget {
   @override
@@ -63,10 +64,10 @@ class _OverviewPageState extends State<OverviewPage> {
         itemCount: _overviewItems.length,
         itemBuilder: (context, index) {
           final _overviewItem = _overviewItems[index];
-          return ListTile(
-            leading: Icon(Icons.person),
-            title: Text(_overviewItem.title),
-            subtitle: Text(_overviewItem.subtitle),
+          return ItemTile(
+            icon: AntDesign.book,
+            title: _overviewItem.title,
+            subtitle: _overviewItem.subtitle,
             onTap: () => onSelected(_overviewItem),
           );
         },
