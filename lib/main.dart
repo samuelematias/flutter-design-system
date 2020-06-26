@@ -1,5 +1,6 @@
 import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/core/theme/app_theme.dart';
+import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -43,6 +44,9 @@ class _MyAppState extends State<MyApp> {
               darkTheme: AppTheme.darkTheme,
               themeMode: _settings.isDark ? ThemeMode.dark : ThemeMode.light,
               home: CustomTabBar(),
+              onUnknownRoute: (settings) {
+                return MaterialPageRoute(builder: (_) => PageNotFoundPage());
+              },
             );
           }),
     );
