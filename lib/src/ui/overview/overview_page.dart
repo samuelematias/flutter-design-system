@@ -1,9 +1,9 @@
 import 'package:designsystem/src/core/constants/constants.dart';
 import 'package:designsystem/src/ui/overview/helper/overview_items.dart';
 import 'package:designsystem/src/ui/overview/introduction/introduction_page.dart';
+import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class OverviewPage extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class OverviewPage extends StatefulWidget {
 }
 
 class _OverviewPageState extends State<OverviewPage> {
-  final List<Overview> _overviewItems = overviewItems();
+  final List<Overview> _items = overviewItems();
 
   final _selection = ValueNotifier<Overview>(null);
 
@@ -28,17 +28,15 @@ class _OverviewPageState extends State<OverviewPage> {
                 _selection.value = val;
               }),
             ),
-            VerticalDivider(
-              width: 0,
-            ),
+            VerticalDivider(width: 0),
             Expanded(
               child: ValueListenableBuilder(
                 valueListenable: _selection,
-                builder: (context, overviewItem, child) {
-                  if (overviewItem == null) {
+                builder: (context, item, child) {
+                  if (item == null) {
                     return Scaffold();
                   }
-                  return IntroductionPage(hideSwitchMode: true);
+                  return chooseScreen(itemID: item.id, hideSwitchMode: true);
                 },
               ),
             )
@@ -48,7 +46,7 @@ class _OverviewPageState extends State<OverviewPage> {
       return buildListView(dimens, (val) {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => IntroductionPage(),
+            builder: (_) => chooseScreen(itemID: val.id),
           ),
         );
       });
@@ -61,17 +59,27 @@ class _OverviewPageState extends State<OverviewPage> {
       pageTitle: 'Overview',
       child: ListView.separated(
         separatorBuilder: (context, index) => Divider(height: 0),
-        itemCount: _overviewItems.length,
+        itemCount: _items.length,
         itemBuilder: (context, index) {
-          final _overviewItem = _overviewItems[index];
+          final _item = _items[index];
           return ItemTile(
-            icon: AntDesign.book,
-            title: _overviewItem.title,
-            subtitle: _overviewItem.subtitle,
-            onTap: () => onSelected(_overviewItem),
+            icon: _item.icon,
+            title: _item.title,
+            subtitle: _item.subtitle,
+            onTap: () => onSelected(_item),
           );
         },
       ),
     );
+  }
+
+  Widget chooseScreen({String itemID, bool hideSwitchMode = false}) {
+    switch (itemID) {
+      case '1':
+        return IntroductionPage(hideSwitchMode: hideSwitchMode);
+        break;
+      default:
+        return PageNotFoundPage();
+    }
   }
 }
