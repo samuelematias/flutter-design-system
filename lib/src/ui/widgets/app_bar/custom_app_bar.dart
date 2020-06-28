@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(pageTitle),
+        title: SelectableText(pageTitle),
         elevation: 0,
         actions: [
           Visibility(
