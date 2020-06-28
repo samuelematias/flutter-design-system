@@ -34,4 +34,7 @@ class ColorPalette {
       900: Color(0xFF000000),
     },
   );
+
+  static const Color overlay50 = Color.fromRGBO(0, 0, 0, 0.24);
+  static const Color overlay100 = Color.fromRGBO(0, 0, 0, 0.35);
 }
