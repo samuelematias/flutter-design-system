@@ -1,7 +1,6 @@
+import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class ColorDemonstration extends StatelessWidget {
   final String colorName;
@@ -11,6 +10,7 @@ class ColorDemonstration extends StatelessWidget {
     @required this.colorName,
     @required this.colorHex,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,16 +46,9 @@ class ColorDemonstration extends StatelessWidget {
             Positioned(
               right: 10.0,
               bottom: 10.0,
-              child: InkResponse(
-                onTap: () => _onTap(context),
-                child: Tooltip(
-                  message: "Copy dart code color",
-                  child: Icon(
-                    AntDesign.copy1,
-                    size: 20.0,
-                    color: Colors.white70,
-                  ),
-                ),
+              child: CopyText(
+                textCopied: '$colorHex',
+                textTooltip: "Copy dart code color",
               ),
             )
           ],
@@ -63,17 +56,4 @@ class ColorDemonstration extends StatelessWidget {
       ],
     );
   }
-
-  void _onTap(BuildContext context) {
-    Clipboard.setData(
-      ClipboardData(text: '$colorHex'),
-    );
-    _showSnackBar(context);
-  }
-
-  void _showSnackBar(BuildContext context) =>
-      Scaffold.of(context).showSnackBar(SnackBar(
-        action: SnackBarAction(label: 'Close', onPressed: () {}),
-        content: Text('Copied!'),
-      ));
 }

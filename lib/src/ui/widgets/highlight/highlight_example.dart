@@ -1,9 +1,8 @@
 import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/ui/widgets/highlight/highlight_code.dart';
+import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class HighlightExample extends StatelessWidget {
@@ -14,6 +13,7 @@ class HighlightExample extends StatelessWidget {
     @required this.code,
     @required this.examples,
   });
+
   @override
   Widget build(BuildContext context) {
     final _settings = Provider.of<Settings>(context, listen: false);
@@ -50,16 +50,9 @@ class HighlightExample extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HighlightCode(code: code),
-                InkResponse(
-                  onTap: () => _onTap(context),
-                  child: Tooltip(
-                    message: "Copy this snippet of code",
-                    child: Icon(
-                      AntDesign.copy1,
-                      size: 20.0,
-                      color: Colors.white70,
-                    ),
-                  ),
+                CopyText(
+                  textCopied: code,
+                  textTooltip: "Copy this snippet of code",
                 ),
               ],
             ),
@@ -68,17 +61,4 @@ class HighlightExample extends StatelessWidget {
       ),
     );
   }
-
-  void _onTap(BuildContext context) {
-    Clipboard.setData(
-      ClipboardData(text: code),
-    );
-    _showSnackBar(context);
-  }
-
-  void _showSnackBar(BuildContext context) =>
-      Scaffold.of(context).showSnackBar(SnackBar(
-        action: SnackBarAction(label: 'Close', onPressed: () {}),
-        content: Text('Copied!'),
-      ));
 }
