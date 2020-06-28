@@ -20,7 +20,7 @@ class HighlightCode extends StatelessWidget {
       code,
       language: 'dart',
       theme: _settings.isDark ? atomOneLightTheme : atomOneDarkTheme,
-      // padding: EdgeInsets.symmetric(vertical: PomodoroSpace.dodger_blue),
+      // padding: EdgeInsets.all(20.0),
       textStyle: TextStyle(fontSize: 16.0),
     );
   }
