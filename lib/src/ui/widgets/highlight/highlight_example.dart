@@ -49,7 +49,7 @@ class HighlightExample extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                HighlightCode(code: code),
+                Flexible(child: HighlightCode(code: code)),
                 CopyText(
                   textCopied: code,
                   textTooltip: "Copy this snippet of code",
