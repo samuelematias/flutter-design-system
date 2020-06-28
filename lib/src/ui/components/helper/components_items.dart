@@ -24,11 +24,5 @@ List<Components> componentsItems() {
       'Loading',
       'The Loading of the Components system.',
     ),
-    Components(
-      '3',
-      Icons.image,
-      'Skeleton',
-      'The Placeholder/Shimmer Effect of the Components system.',
-    ),
   ];
 }
