@@ -1,6 +1,10 @@
+import 'package:designsystem/src/core/storage/storage.dart';
+import 'package:designsystem/src/core/theme/theme.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:provider/provider.dart';
 
 class CopyText extends StatelessWidget {
   final String textCopied;
@@ -13,6 +17,8 @@ class CopyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _settings = Provider.of<Settings>(context, listen: false);
+
     return InkResponse(
       onTap: () => _onTap(context),
       child: Tooltip(
@@ -20,7 +26,9 @@ class CopyText extends StatelessWidget {
         child: Icon(
           AntDesign.copy1,
           size: 20.0,
-          color: Colors.white70,
+          color: _settings.isDark
+              ? ColorPalette.atomOneDarkBg
+              : ColorPalette.atomOneLightBg,
         ),
       ),
     );
