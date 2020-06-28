@@ -13,6 +13,7 @@ extension SelectableTextExtension on SelectableText {
         textDirection: textDirection,
         textScaleFactor: textScaleFactor,
         textWidthBasis: textWidthBasis,
+        toolbarOptions: ToolbarOptions(copy: true, selectAll: true),
         style: (this.style ?? defaultStyle).merge(style ?? defaultStyle));
   }
 
@@ -28,6 +29,7 @@ extension SelectableTextExtension on SelectableText {
         textDirection: textDirection,
         textScaleFactor: textScaleFactor,
         textWidthBasis: textWidthBasis,
+        toolbarOptions: ToolbarOptions(copy: true, selectAll: true),
         style: (this.style ?? defaultStyle).merge(style ?? defaultStyle));
   }
 
@@ -43,6 +45,7 @@ extension SelectableTextExtension on SelectableText {
         textDirection: textDirection,
         textScaleFactor: textScaleFactor,
         textWidthBasis: textWidthBasis,
+        toolbarOptions: ToolbarOptions(copy: true, selectAll: true),
         style: (this.style ?? defaultStyle).merge(style ?? defaultStyle));
   }
 
@@ -58,6 +61,7 @@ extension SelectableTextExtension on SelectableText {
         textDirection: textDirection,
         textScaleFactor: textScaleFactor,
         textWidthBasis: textWidthBasis,
+        toolbarOptions: ToolbarOptions(copy: true, selectAll: true),
         style: (this.style ?? defaultStyle).merge(style ?? defaultStyle));
   }
 }
