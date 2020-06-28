@@ -1,4 +1,3 @@
-import 'package:designsystem/src/ui/design/color_scheme/helper/colors_items.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
@@ -12,7 +11,7 @@ class ColorSchemePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ColorsItems> _items = colorsItems();
+    // final List<ColorsItems> _items = colorsItems();
 
     return CustomAppBar(
       pageTitle: 'Color Scheme',
@@ -35,19 +34,23 @@ class ColorSchemePage extends StatelessWidget {
                             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.')
                         .h2(style: TextStyle(fontWeight: FontWeight.w200)),
                   ),
-                  Container(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: _items.length,
-                      itemBuilder: (context, index) {
-                        final _item = _items[index];
-                        return ColoDemonstration(
-                          colorName: _item.colorName,
-                          colorHex: _item.colorHex,
-                        );
-                      },
-                    ),
+                  // Container(
+                  //   height: 200,
+                  //   child: ListView.builder(
+                  //     scrollDirection: Axis.horizontal,
+                  //     itemCount: _items.length,
+                  //     itemBuilder: (context, index) {
+                  //       final _item = _items[index];
+                  //       return ColoDemonstration(
+                  //         colorName: _item.colorName,
+                  //         colorHex: _item.colorHex,
+                  //       );
+                  //     },
+                  //   ),
+                  // ),
+                  ColoDemonstration(
+                    colorName: 'Dark Blue',
+                    colorHex: '#009EEB',
                   ),
                 ],
               ),
