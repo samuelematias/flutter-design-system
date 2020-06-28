@@ -3,11 +3,11 @@ import 'package:designsystem/src/core/theme/theme.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-class ColoDemonstration extends StatelessWidget {
+class ColorDemonstration extends StatelessWidget {
   final String colorName;
   final String colorHex;
 
-  const ColoDemonstration({
+  const ColorDemonstration({
     @required this.colorName,
     @required this.colorHex,
   });

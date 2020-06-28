@@ -41,14 +41,14 @@ class ColorSchemePage extends StatelessWidget {
                   //     itemCount: _items.length,
                   //     itemBuilder: (context, index) {
                   //       final _item = _items[index];
-                  //       return ColoDemonstration(
+                  //       return ColorDemonstration(
                   //         colorName: _item.colorName,
                   //         colorHex: _item.colorHex,
                   //       );
                   //     },
                   //   ),
                   // ),
-                  ColoDemonstration(
+                  ColorDemonstration(
                     colorName: 'Dark Blue',
                     colorHex: '#009EEB',
                   ),
