@@ -49,7 +49,7 @@ class ColorDemonstration extends StatelessWidget {
               child: InkResponse(
                 onTap: () => _onTap(context),
                 child: Tooltip(
-                  message: "Copy hex code",
+                  message: "Copy dart code color",
                   child: Icon(
                     AntDesign.copy1,
                     size: 20.0,
