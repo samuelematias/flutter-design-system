@@ -1,3 +1,4 @@
+import 'package:designsystem/src/ui/widgets/highlight/types.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
@@ -39,10 +40,31 @@ class TypographyPage extends StatelessWidget {
                               'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.')
                           .h2(style: TextStyle(fontWeight: FontWeight.w200)),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.0),
-                      child: HighlightCode(code: '''Text('Pomodoro').h1()'''),
+                    SizedBox(height: 10.0),
+                    _buildTypographyExamples(
+                      code: 'h1',
+                      header: 1,
+                      typography: TypographyType.h1,
                     ),
+                    SizedBox(height: 40.0),
+                    _buildTypographyExamples(
+                      code: 'h2',
+                      header: 2,
+                      typography: TypographyType.h2,
+                    ),
+                    SizedBox(height: 40.0),
+                    _buildTypographyExamples(
+                      code: 'h3',
+                      header: 3,
+                      typography: TypographyType.h3,
+                    ),
+                    SizedBox(height: 40.0),
+                    _buildTypographyExamples(
+                      code: 'h4',
+                      header: 4,
+                      typography: TypographyType.h4,
+                    ),
+                    SizedBox(height: 40.0),
                   ],
                 ),
               ),
@@ -52,4 +74,25 @@ class TypographyPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildTypographyExamples({
+    @required String code,
+    @required int header,
+    @required TypographyType typography,
+  }) =>
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: HighlightExample(
+          code: _handleCode(code),
+          examples: [
+            HLEXText(
+              text: _handleTypographyHeader('$header'),
+              typography: typography,
+            )
+          ],
+        ),
+      );
+
+  String _handleCode(String n) => '''Text('Header').$n()''';
+  String _handleTypographyHeader(String h) => 'Header $h';
 }
