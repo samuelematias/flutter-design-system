@@ -21,7 +21,7 @@ class ColorDemonstration extends StatelessWidget {
               width: 150,
               height: 85,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color(int.parse(colorHex)),
                 borderRadius: BorderRadius.circular(4.0),
               ),
             ),
@@ -30,10 +30,14 @@ class ColorDemonstration extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(colorName).h3(style: TextStyle(color: Colors.white)),
+                  Text(
+                    colorName,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ).h3(style: TextStyle(color: Colors.white)),
                   Padding(
                     padding: EdgeInsets.only(top: 4.0),
-                    child: Text(colorHex)
+                    child: Text('$colorHex')
                         .h4(style: TextStyle(color: Colors.white70)),
                   ),
                 ],
@@ -45,7 +49,7 @@ class ColorDemonstration extends StatelessWidget {
               child: InkResponse(
                 onTap: () => _onTap(context),
                 child: Tooltip(
-                  message: "Copy hex code",
+                  message: "Copy dart code color",
                   child: Icon(
                     AntDesign.copy1,
                     size: 20.0,
@@ -62,7 +66,7 @@ class ColorDemonstration extends StatelessWidget {
 
   void _onTap(BuildContext context) {
     Clipboard.setData(
-      ClipboardData(text: colorHex),
+      ClipboardData(text: '$colorHex'),
     );
     _showSnackBar(context);
   }
