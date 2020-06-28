@@ -37,8 +37,8 @@ class ColorPalette {
 
   static const Color overlay50 = Color.fromRGBO(0, 0, 0, 0.24);
   static const Color overlay100 = Color.fromRGBO(0, 0, 0, 0.35);
-  static const Color red50 = Color(0xFFC41835);
+  static const Color red50 = Color(0xFFFF5216);
   static const Color green50 = Color(0xFF50A773);
-  static const Color grey50 = Color(0xFFF2F2F2);
-  static const Color grey100 = Color(0xFFDCDCDC);
+  static const Color blue50 = Color(0xFF009EEB);
+  static const Color yellow50 = Color(0xFFFFD55F);
 }
