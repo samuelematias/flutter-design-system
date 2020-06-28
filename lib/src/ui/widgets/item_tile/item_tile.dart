@@ -35,13 +35,9 @@ class ItemTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      title,
-                    ).h3(),
+                    Text(title).h3(),
                     Flexible(
-                      child: Text(
-                        subtitle,
-                      ).h3(
+                      child: Text(subtitle).h3(
                         style: TextStyle(
                           fontWeight: FontWeight.w200,
                         ),
