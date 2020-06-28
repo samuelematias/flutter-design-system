@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:designsystem/src/core/theme/theme.dart';
 
 class ItemTile extends StatelessWidget {
   final IconData icon;
@@ -36,19 +37,13 @@ class ItemTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 16.0,
-                        // color: Colors.black,
-                      ),
-                    ),
+                    ).h3(),
                     Flexible(
                       child: Text(
                         subtitle,
+                      ).h3(
                         style: TextStyle(
                           fontWeight: FontWeight.w200,
-                          fontSize: 16.0,
-                          // color: Colors.black,
                         ),
                       ),
                     )
