@@ -41,4 +41,9 @@ class ColorPalette {
   static const Color green50 = Color(0xFF50A773);
   static const Color blue50 = Color(0xFF009EEB);
   static const Color yellow50 = Color(0xFFFFD55F);
+  static const Color grey50 = Color(0xFFF2F2F2);
+  static const Color grey100 = Color(0xFFDCDCDC);
+  static const Color grey200 = Color(0xFFA6A6A6);
+  static const Color atomOneLightBg = Color(0xFFFAFAFA);
+  static const Color atomOneDarkBg = Color(0xFF282C34);
 }

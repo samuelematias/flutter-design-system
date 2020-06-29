@@ -2,7 +2,6 @@ import 'package:designsystem/src/core/constants/constants.dart';
 import 'package:designsystem/src/ui/components/buttons/buttons_page.dart';
 import 'package:designsystem/src/ui/components/helper/components_items.dart';
 import 'package:designsystem/src/ui/components/loading/loading_page.dart';
-import 'package:designsystem/src/ui/components/skeleton/skeleton_page.dart';
 import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -82,9 +81,6 @@ class _ComponentsPageState extends State<ComponentsPage> {
         break;
       case '2':
         return LoadingPage(hideSwitchMode: hideSwitchMode);
-        break;
-      case '3':
-        return SkeletonPage(hideSwitchMode: hideSwitchMode);
         break;
       default:
         return PageNotFoundPage();
