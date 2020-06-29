@@ -17,25 +17,19 @@ class TypographyPage extends StatelessWidget {
       hideSwitchMode: hideSwitchMode,
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: SelectableText('Typography').h1(),
-              ),
+              SelectableText('Typography').h1(),
               Padding(
                 padding: EdgeInsets.only(top: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SelectableText('Font sizes').h2(),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.0),
-                      child: SelectableText('Font sizes').h2(),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(16.0),
+                      padding: EdgeInsets.symmetric(vertical: 16.0),
                       child: SelectableText(
                               'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.')
                           .h2(style: TextStyle(fontWeight: FontWeight.w200)),
@@ -80,17 +74,14 @@ class TypographyPage extends StatelessWidget {
     @required int header,
     @required TypographyType typography,
   }) =>
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: HighlightExample(
-          code: _handleCode(code),
-          examples: [
-            HLEXText(
-              text: _handleTypographyHeader('$header'),
-              typography: typography,
-            )
-          ],
-        ),
+      HighlightExample(
+        code: _handleCode(code),
+        examples: [
+          HLEXText(
+            text: _handleTypographyHeader('$header'),
+            typography: typography,
+          )
+        ],
       );
 
   String _handleCode(String n) => '''Text('Header').$n()''';
