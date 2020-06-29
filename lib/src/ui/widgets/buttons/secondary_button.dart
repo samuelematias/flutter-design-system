@@ -38,10 +38,7 @@ class SecondaryButton extends StatelessWidget {
         height: 50.0,
         alignment: Alignment.center,
         child: loading
-            ? CustomProgressIndicator(
-                backgroundColor: Colors.transparent,
-                valueColor: Colors.deepPurple,
-              )
+            ? CustomProgressIndicator()
             : Text(
                 label,
                 textAlign: TextAlign.center,

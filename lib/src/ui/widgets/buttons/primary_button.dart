@@ -32,7 +32,9 @@ class PrimaryButton extends StatelessWidget {
         height: 50.0,
         alignment: Alignment.center,
         child: loading
-            ? CustomProgressIndicator()
+            ? CustomProgressIndicator(
+                valueColor: Colors.white,
+              )
             : Text(
                 label,
                 textAlign: TextAlign.center,

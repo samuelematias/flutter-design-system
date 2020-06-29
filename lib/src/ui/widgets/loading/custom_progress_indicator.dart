@@ -5,8 +5,8 @@ class CustomProgressIndicator extends SizedBox {
     double width = 30.0,
     double height = 30.0,
     double strokeWidth = 2.0,
-    Color backgroundColor = Colors.deepPurple,
-    Color valueColor = Colors.white,
+    Color backgroundColor = Colors.transparent,
+    Color valueColor = Colors.deepPurple,
   }) : super(
           child: CircularProgressIndicator(
             backgroundColor: backgroundColor,
