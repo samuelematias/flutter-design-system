@@ -1,8 +1,6 @@
-import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 import 'package:designsystem/src/ui/widgets/loading/custom_progress_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SecondaryButton extends StatelessWidget {
   final String label;
@@ -25,8 +23,6 @@ class SecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _settings = Provider.of<Settings>(context, listen: false);
-
     return OutlineButton(
       borderSide: BorderSide(color: Colors.deepPurple, width: 2),
       highlightedBorderColor: Colors.deepPurple,
@@ -43,8 +39,7 @@ class SecondaryButton extends StatelessWidget {
         alignment: Alignment.center,
         child: loading
             ? CustomProgressIndicator(
-                backgroundColor:
-                    _settings.isDark ? Color(0xFF303030) : Colors.white,
+                backgroundColor: Colors.transparent,
                 valueColor: Colors.deepPurple,
               )
             : Text(
