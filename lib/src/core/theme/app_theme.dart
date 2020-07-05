@@ -74,9 +74,19 @@ class AppTheme {
   );
 
   static final TextTheme _darkTextTheme = TextTheme(
-    headline2: _darkScreenHeadingTextStyle,
+    caption: _darkScreenHeadingTextStyle,
+    button: _darkScreenHeadingTextStyle,
+    overline: _darkScreenHeadingTextStyle,
     bodyText1: _darkScreenTaskNameTextStyle,
     bodyText2: _darkScreenTaskDurationTextStyle,
+    headline2: _darkScreenHeadingTextStyle,
+    headline1: _darkScreenHeadingTextStyle,
+    headline3: _darkScreenHeadingTextStyle,
+    headline4: _darkScreenHeadingTextStyle,
+    headline5: _darkScreenHeadingTextStyle,
+    headline6: _darkScreenHeadingTextStyle,
+    subtitle1: _darkScreenHeadingTextStyle,
+    subtitle2: _darkScreenHeadingTextStyle,
   );
 
   static final TextStyle _lightScreenHeadingTextStyle =
