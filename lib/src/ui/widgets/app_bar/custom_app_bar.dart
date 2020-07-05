@@ -19,24 +19,35 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final _settings = Provider.of<Settings>(context, listen: false);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: SelectableText(pageTitle),
-        elevation: 0,
-        actions: [
-          Visibility(
-            visible: !hideSwitchMode,
-            child: Padding(
-              padding: EdgeInsets.only(right: 16.0),
-              child: DayNightSwitcherIcon(
-                isDarkModeEnabled: _settings.isDark,
-                onStateChanged: _settings.updateIsDark,
+    return WillPopScope(
+      onWillPop: () async => _onWillPop(context),
+      child: Scaffold(
+        appBar: AppBar(
+          title: SelectableText(pageTitle),
+          elevation: 0,
+          actions: [
+            Visibility(
+              visible: !hideSwitchMode,
+              child: Padding(
+                padding: EdgeInsets.only(right: 16.0),
+                child: DayNightSwitcherIcon(
+                  isDarkModeEnabled: _settings.isDark,
+                  onStateChanged: _settings.updateIsDark,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
+        body: child,
       ),
-      body: child,
     );
+  }
+
+  Future<bool> _onWillPop(BuildContext context) async {
+    if (Navigator.of(context).userGestureInProgress) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
