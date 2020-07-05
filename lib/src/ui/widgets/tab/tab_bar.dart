@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatefulWidget {
   static const String route = '/';
+
   @override
   _CustomTabBarState createState() => _CustomTabBarState();
 }
