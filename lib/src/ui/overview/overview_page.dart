@@ -6,6 +6,8 @@ import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class OverviewPage extends StatefulWidget {
+  static const String route = '/overview';
+
   @override
   _OverviewPageState createState() => _OverviewPageState();
 }

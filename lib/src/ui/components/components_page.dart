@@ -7,6 +7,8 @@ import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class ComponentsPage extends StatefulWidget {
+  static const String route = '/components';
+
   @override
   _ComponentsPageState createState() => _ComponentsPageState();
 }

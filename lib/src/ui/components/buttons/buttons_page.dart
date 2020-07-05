@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 
 class ButtonsPage extends StatelessWidget {
+  static const String route = '/components/buttons';
+
   final bool hideSwitchMode;
 
   const ButtonsPage({

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 
 class TypographyPage extends StatelessWidget {
+  static const String route = '/design/typography';
+
   final bool hideSwitchMode;
 
   const TypographyPage({

@@ -7,6 +7,8 @@ import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DesignPage extends StatefulWidget {
+  static const String route = '/design';
+
   @override
   _DesignPageState createState() => _DesignPageState();
 }

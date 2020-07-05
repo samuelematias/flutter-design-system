@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 
 class ColorSchemePage extends StatelessWidget {
+  static const String route = '/design/color-scheme';
+
   final bool hideSwitchMode;
 
   const ColorSchemePage({

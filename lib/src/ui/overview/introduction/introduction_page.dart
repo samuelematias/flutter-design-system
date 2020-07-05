@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 
 class IntroductionPage extends StatelessWidget {
+  static const String route = '/overview/introduction';
+
   final bool hideSwitchMode;
 
   const IntroductionPage({
