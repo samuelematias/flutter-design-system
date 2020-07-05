@@ -37,6 +37,7 @@ class AppTheme {
       unselectedIconTheme: IconThemeData(color: _lightUnselectedIconColor),
       unselectedItemColor: _lightBlack,
     ),
+    accentColor: _accentColor,
     appBarTheme: AppBarTheme(
       color: _accentColor,
       iconTheme: IconThemeData(color: _lightWhite),
