@@ -42,8 +42,9 @@ class _MyAppState extends State<MyApp> {
               title: 'Design System',
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
-              themeMode: _settings.isDark ? ThemeMode.dark : ThemeMode.light,
-              // home: CustomTabBar(),
+              themeMode: _settings.isSystemTheme
+                  ? ThemeMode.system
+                  : _settings.isDark ? ThemeMode.dark : ThemeMode.light,
               initialRoute: CustomTabBar.route,
               routes: {
                 CustomTabBar.route: (context) => CustomTabBar(),

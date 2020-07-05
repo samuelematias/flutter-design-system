@@ -36,11 +36,23 @@ class _SettingsPageState extends State<SettingsPage> {
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: SelectableText('Theme').h1(),
           ),
-          SwitchListTile(
-            title: SelectableText('Dark mode')
-                .h2(style: TextStyle(fontWeight: FontWeight.w200)),
-            value: settings.isDark,
-            onChanged: settings.updateIsDark,
+          Visibility(
+            visible: !settings.isSystemTheme,
+            child: SwitchListTile(
+              title: SelectableText('Dark mode')
+                  .h2(style: TextStyle(fontWeight: FontWeight.w200)),
+              value: settings.isDark,
+              onChanged: settings.updateIsDark,
+            ),
+          ),
+          Visibility(
+            visible: !settings.isDark,
+            child: SwitchListTile(
+              title: SelectableText('System mode')
+                  .h2(style: TextStyle(fontWeight: FontWeight.w200)),
+              value: settings.isSystemTheme,
+              onChanged: settings.updateIsSystemTheme,
+            ),
           ),
         ],
       );
