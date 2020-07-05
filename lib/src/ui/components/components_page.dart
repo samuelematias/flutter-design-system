@@ -12,7 +12,6 @@ class ComponentsPage extends StatefulWidget {
 
 class _ComponentsPageState extends State<ComponentsPage> {
   final List<Routes> _items = routes();
-
   final _selection = ValueNotifier<Routes>(null);
 
   @override

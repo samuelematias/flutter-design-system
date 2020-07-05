@@ -12,12 +12,10 @@ class OverviewPage extends StatefulWidget {
 
 class _OverviewPageState extends State<OverviewPage> {
   final List<Routes> _items = routes();
-  // final String a = widget.route;
   final _selection = ValueNotifier<Routes>(null);
 
   @override
   Widget build(BuildContext context) {
-    // final String a = widget.route;
     return LayoutBuilder(builder: (context, dimens) {
       if (dimens.maxWidth >= kTabletBreakpoint) {
         const kListViewWidth = 300.0;

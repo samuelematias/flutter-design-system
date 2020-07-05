@@ -12,7 +12,6 @@ class DesignPage extends StatefulWidget {
 
 class _DesignPageState extends State<DesignPage> {
   final List<Routes> _items = routes();
-
   final _selection = ValueNotifier<Routes>(null);
 
   @override
