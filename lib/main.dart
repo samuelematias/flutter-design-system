@@ -55,6 +55,7 @@ class _MyAppState extends State<MyApp> {
                 ComponentsPage.route: (context) => ComponentsPage(),
                 ButtonsPage.route: (context) => ButtonsPage(),
                 LoadingPage.route: (context) => LoadingPage(),
+                SettingsPage.route: (context) => SettingsPage(),
                 NotFoundPage.route: (context) => NotFoundPage(),
               },
               onUnknownRoute: (settings) {

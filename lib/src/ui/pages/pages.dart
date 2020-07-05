@@ -6,4 +6,5 @@ export 'package:designsystem/src/ui/pages/design/typography/typography_page.dart
 export 'package:designsystem/src/ui/pages/components/components_page.dart';
 export 'package:designsystem/src/ui/pages/components/buttons/buttons_page.dart';
 export 'package:designsystem/src/ui/pages/components/loading/loading_page.dart';
+export 'package:designsystem/src/ui/pages/settings/settings_page.dart';
 export 'package:designsystem/src/ui/pages/not_found/not_found_page.dart';

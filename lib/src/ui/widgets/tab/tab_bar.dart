@@ -33,6 +33,11 @@ class _CustomTabBarState extends State<CustomTabBar> {
             iconData: Icons.contacts,
             body: ComponentsPage(),
           ),
+          TabItem(
+            title: 'Settings',
+            iconData: Icons.settings,
+            body: SettingsPage(),
+          ),
         ],
         selectedIndex: index,
         onSelectionChanged: (val) => _tabsController.value = val,
