@@ -38,6 +38,15 @@ class Settings {
     _controller.add(this);
   }
 
+  static const String _isSystemThemeModeKey = 'is_system_theme';
+  bool get isSystemTheme => _prefs?.getBool(_isSystemThemeModeKey) ?? true;
+  set isSystemTheme(bool value) => updateIsSystemTheme(value);
+  Future updateIsSystemTheme(bool value) async {
+    if (!isReady) await init();
+    await _prefs.setBool(_isSystemThemeModeKey, value);
+    _controller.add(this);
+  }
+
   static const String _themeModeKey = 'theme_mode';
   ThemeMode get themeMode => ThemeMode
       .values[(_prefs?.getInt(_themeModeKey) ?? ThemeMode.system.index)];

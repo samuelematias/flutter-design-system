@@ -1,20 +1,18 @@
 import 'package:designsystem/src/core/constants/constants.dart';
-import 'package:designsystem/src/ui/components/buttons/buttons_page.dart';
-import 'package:designsystem/src/ui/components/helper/components_items.dart';
-import 'package:designsystem/src/ui/components/loading/loading_page.dart';
-import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
+import 'package:designsystem/src/core/routes/routes.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class ComponentsPage extends StatefulWidget {
+  static const String route = '/components';
+
   @override
   _ComponentsPageState createState() => _ComponentsPageState();
 }
 
 class _ComponentsPageState extends State<ComponentsPage> {
-  final List<Components> _items = componentsItems();
-
-  final _selection = ValueNotifier<Components>(null);
+  final List<Routes> _items = routes();
+  final _selection = ValueNotifier<Routes>(null);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +35,7 @@ class _ComponentsPageState extends State<ComponentsPage> {
                   if (item == null) {
                     return Scaffold();
                   }
-                  return chooseScreen(itemID: item.id, hideSwitchMode: true);
+                  return item.page;
                 },
               ),
             )
@@ -45,17 +43,12 @@ class _ComponentsPageState extends State<ComponentsPage> {
         );
       }
       return buildListView(dimens, (val) {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => chooseScreen(itemID: val.id),
-          ),
-        );
+        Navigator.of(context).pushNamed(val.route);
       });
     });
   }
 
-  Widget buildListView(
-      BoxConstraints dimens, ValueChanged<Components> onSelected) {
+  Widget buildListView(BoxConstraints dimens, ValueChanged<Routes> onSelected) {
     return CustomAppBar(
       pageTitle: 'Components',
       child: ListView.separated(
@@ -63,27 +56,17 @@ class _ComponentsPageState extends State<ComponentsPage> {
         itemCount: _items.length,
         itemBuilder: (context, index) {
           final _item = _items[index];
-          return ItemTile(
-            icon: _item.icon,
-            title: _item.title,
-            subtitle: _item.subtitle,
-            onTap: () => onSelected(_item),
+          return Visibility(
+            visible: _item.route.contains('/components'),
+            child: ItemTile(
+              icon: _item.icon,
+              title: _item.title,
+              subtitle: _item.subtitle,
+              onTap: () => onSelected(_item),
+            ),
           );
         },
       ),
     );
-  }
-
-  Widget chooseScreen({String itemID, bool hideSwitchMode = false}) {
-    switch (itemID) {
-      case '1':
-        return ButtonsPage(hideSwitchMode: hideSwitchMode);
-        break;
-      case '2':
-        return LoadingPage(hideSwitchMode: hideSwitchMode);
-        break;
-      default:
-        return PageNotFoundPage();
-    }
   }
 }

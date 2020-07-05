@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
 
 class LoadingPage extends StatelessWidget {
+  static const String route = '/components/loading';
+
   final bool hideSwitchMode;
 
   const LoadingPage({

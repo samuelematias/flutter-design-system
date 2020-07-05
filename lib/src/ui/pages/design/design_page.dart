@@ -1,20 +1,18 @@
 import 'package:designsystem/src/core/constants/constants.dart';
-import 'package:designsystem/src/ui/design/color_scheme/color_scheme_page.dart';
-import 'package:designsystem/src/ui/design/helper/design_items.dart';
-import 'package:designsystem/src/ui/design/typography/typography_page.dart';
-import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
+import 'package:designsystem/src/core/routes/routes.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DesignPage extends StatefulWidget {
+  static const String route = '/design';
+
   @override
   _DesignPageState createState() => _DesignPageState();
 }
 
 class _DesignPageState extends State<DesignPage> {
-  final List<Design> _items = designItems();
-
-  final _selection = ValueNotifier<Design>(null);
+  final List<Routes> _items = routes();
+  final _selection = ValueNotifier<Routes>(null);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +35,7 @@ class _DesignPageState extends State<DesignPage> {
                   if (item == null) {
                     return Scaffold();
                   }
-                  return chooseScreen(itemID: item.id, hideSwitchMode: true);
+                  return item.page;
                 },
               ),
             )
@@ -45,16 +43,12 @@ class _DesignPageState extends State<DesignPage> {
         );
       }
       return buildListView(dimens, (val) {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => chooseScreen(itemID: val.id),
-          ),
-        );
+        Navigator.of(context).pushNamed(val.route);
       });
     });
   }
 
-  Widget buildListView(BoxConstraints dimens, ValueChanged<Design> onSelected) {
+  Widget buildListView(BoxConstraints dimens, ValueChanged<Routes> onSelected) {
     return CustomAppBar(
       pageTitle: 'Design',
       child: ListView.separated(
@@ -62,27 +56,17 @@ class _DesignPageState extends State<DesignPage> {
         itemCount: _items.length,
         itemBuilder: (context, index) {
           final _item = _items[index];
-          return ItemTile(
-            icon: _item.icon,
-            title: _item.title,
-            subtitle: _item.subtitle,
-            onTap: () => onSelected(_item),
+          return Visibility(
+            visible: _item.route.contains('/design'),
+            child: ItemTile(
+              icon: _item.icon,
+              title: _item.title,
+              subtitle: _item.subtitle,
+              onTap: () => onSelected(_item),
+            ),
           );
         },
       ),
     );
-  }
-
-  Widget chooseScreen({String itemID, bool hideSwitchMode = false}) {
-    switch (itemID) {
-      case '1':
-        return ColorSchemePage(hideSwitchMode: hideSwitchMode);
-        break;
-      case '2':
-        return TypographyPage(hideSwitchMode: hideSwitchMode);
-        break;
-      default:
-        return PageNotFoundPage();
-    }
   }
 }

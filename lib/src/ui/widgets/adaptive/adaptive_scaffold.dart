@@ -100,7 +100,7 @@ class AdaptiveScaffold extends StatelessWidget {
         ));
       }
       return Scaffold(
-        body: buildBody(selectedIndex, tabs),
+        body: SafeArea(child: buildBody(selectedIndex, tabs)),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,

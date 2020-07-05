@@ -2,7 +2,9 @@ import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-class PageNotFoundPage extends StatelessWidget {
+class NotFoundPage extends StatelessWidget {
+  static const String route = '/404-not-found';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

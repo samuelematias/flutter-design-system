@@ -1,6 +1,6 @@
 import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/core/theme/app_theme.dart';
-import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
+import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,10 +42,25 @@ class _MyAppState extends State<MyApp> {
               title: 'Design System',
               theme: AppTheme.lightTheme,
               darkTheme: AppTheme.darkTheme,
-              themeMode: _settings.isDark ? ThemeMode.dark : ThemeMode.light,
-              home: CustomTabBar(),
+              themeMode: _settings.isSystemTheme
+                  ? ThemeMode.system
+                  : _settings.isDark ? ThemeMode.dark : ThemeMode.light,
+              initialRoute: CustomTabBar.route,
+              routes: {
+                CustomTabBar.route: (context) => CustomTabBar(),
+                OverviewPage.route: (context) => OverviewPage(),
+                IntroductionPage.route: (context) => IntroductionPage(),
+                DesignPage.route: (context) => DesignPage(),
+                ColorSchemePage.route: (context) => ColorSchemePage(),
+                TypographyPage.route: (context) => TypographyPage(),
+                ComponentsPage.route: (context) => ComponentsPage(),
+                ButtonsPage.route: (context) => ButtonsPage(),
+                LoadingPage.route: (context) => LoadingPage(),
+                SettingsPage.route: (context) => SettingsPage(),
+                NotFoundPage.route: (context) => NotFoundPage(),
+              },
               onUnknownRoute: (settings) {
-                return MaterialPageRoute(builder: (_) => PageNotFoundPage());
+                return MaterialPageRoute(builder: (_) => NotFoundPage());
               },
             );
           }),

@@ -1,11 +1,11 @@
-import 'package:designsystem/src/ui/components/components_page.dart';
-import 'package:designsystem/src/ui/design/design_page.dart';
-import 'package:designsystem/src/ui/overview/overview_page.dart';
+import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/adaptive/adaptive_scaffold.dart';
 import 'package:designsystem/src/ui/widgets/tab/tab_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatefulWidget {
+  static const String route = '/';
+
   @override
   _CustomTabBarState createState() => _CustomTabBarState();
 }
@@ -32,6 +32,11 @@ class _CustomTabBarState extends State<CustomTabBar> {
             title: 'Components',
             iconData: Icons.contacts,
             body: ComponentsPage(),
+          ),
+          TabItem(
+            title: 'Settings',
+            iconData: Icons.settings,
+            body: SettingsPage(),
           ),
         ],
         selectedIndex: index,
