@@ -1,8 +1,4 @@
-import 'package:designsystem/src/ui/components/buttons/buttons_page.dart';
-import 'package:designsystem/src/ui/components/loading/loading_page.dart';
-import 'package:designsystem/src/ui/design/color_scheme/color_scheme_page.dart';
-import 'package:designsystem/src/ui/design/typography/typography_page.dart';
-import 'package:designsystem/src/ui/overview/introduction/introduction_page.dart';
+import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 

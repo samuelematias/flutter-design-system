@@ -1,14 +1,6 @@
 import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/core/theme/app_theme.dart';
-import 'package:designsystem/src/ui/components/buttons/buttons_page.dart';
-import 'package:designsystem/src/ui/components/components_page.dart';
-import 'package:designsystem/src/ui/components/loading/loading_page.dart';
-import 'package:designsystem/src/ui/design/color_scheme/color_scheme_page.dart';
-import 'package:designsystem/src/ui/design/design_page.dart';
-import 'package:designsystem/src/ui/design/typography/typography_page.dart';
-import 'package:designsystem/src/ui/overview/introduction/introduction_page.dart';
-import 'package:designsystem/src/ui/overview/overview_page.dart';
-import 'package:designsystem/src/ui/page_not_found/page_not_found_page.dart';
+import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -63,10 +55,10 @@ class _MyAppState extends State<MyApp> {
                 ComponentsPage.route: (context) => ComponentsPage(),
                 ButtonsPage.route: (context) => ButtonsPage(),
                 LoadingPage.route: (context) => LoadingPage(),
-                PageNotFoundPage.route: (context) => PageNotFoundPage(),
+                NotFoundPage.route: (context) => NotFoundPage(),
               },
               onUnknownRoute: (settings) {
-                return MaterialPageRoute(builder: (_) => PageNotFoundPage());
+                return MaterialPageRoute(builder: (_) => NotFoundPage());
               },
             );
           }),

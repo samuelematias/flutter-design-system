@@ -1,5 +1,5 @@
-import 'package:designsystem/src/ui/design/color_scheme/helper/colors_items.dart';
-import 'package:designsystem/src/ui/design/color_scheme/widgets/color_demonstration/color_demonstration.dart';
+import 'package:designsystem/src/ui/pages/design/color_scheme/helper/colors_items.dart';
+import 'package:designsystem/src/ui/pages/design/color_scheme/widgets/color_demonstration/color_demonstration.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';

@@ -1,6 +1,4 @@
-import 'package:designsystem/src/ui/components/components_page.dart';
-import 'package:designsystem/src/ui/design/design_page.dart';
-import 'package:designsystem/src/ui/overview/overview_page.dart';
+import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/adaptive/adaptive_scaffold.dart';
 import 'package:designsystem/src/ui/widgets/tab/tab_item.dart';
 import 'package:flutter/material.dart';

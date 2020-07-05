@@ -1,4 +1,4 @@
-import 'package:designsystem/src/ui/components/buttons/helper/types.dart';
+import 'package:designsystem/src/ui/pages/components/buttons/helper/types.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
