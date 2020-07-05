@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
           elevation: 0,
           actions: actions,
         ),
-        body: child,
+        body: SafeArea(child: child),
       ),
     );
   }
