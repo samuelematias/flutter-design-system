@@ -42,17 +42,24 @@ class _SettingsPageState extends State<SettingsPage> {
               title: SelectableText('Dark mode')
                   .h2(style: TextStyle(fontWeight: FontWeight.w200)),
               value: settings.isDark,
-              onChanged: settings.updateIsDark,
+              onChanged: (value) {
+                settings.updateIsDark(value);
+                if (!settings.isDark) {
+                  settings.updateIsSystemTheme(true);
+                }
+              },
             ),
           ),
-          Visibility(
-            visible: !settings.isDark,
-            child: SwitchListTile(
-              title: SelectableText('System mode')
-                  .h2(style: TextStyle(fontWeight: FontWeight.w200)),
-              value: settings.isSystemTheme,
-              onChanged: settings.updateIsSystemTheme,
-            ),
+          SwitchListTile(
+            title: SelectableText('System mode')
+                .h2(style: TextStyle(fontWeight: FontWeight.w200)),
+            value: settings.isSystemTheme,
+            onChanged: (value) {
+              settings.updateIsSystemTheme(value);
+              if (settings.isSystemTheme) {
+                settings.updateIsDark(false);
+              }
+            },
           ),
         ],
       );
