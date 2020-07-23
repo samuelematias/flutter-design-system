@@ -25,4 +25,6 @@ Map<String, String> enUS = {
   "english": "English",
   "spanish": "Spanish",
   "portuguese": "Portuguese",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
 };

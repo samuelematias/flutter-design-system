@@ -26,4 +26,6 @@ Map<String, String> esMX = {
   "english": "Inglés",
   "spanish": "Español",
   "portuguese": "Portugués",
+  "enabled": "Habilitado",
+  "disabled": "Discapacitado",
 };

@@ -25,4 +25,6 @@ Map<String, String> ptBR = {
   "english": "Inglês",
   "spanish": "Espanhol",
   "portuguese": "Português",
+  "enabled": "Ativado",
+  "disabled": "Desativado",
 };
