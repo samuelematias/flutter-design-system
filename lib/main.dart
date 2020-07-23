@@ -4,7 +4,6 @@ import 'package:designsystem/src/core/theme/app_theme.dart';
 import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
@@ -33,10 +32,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-    ));
-
     return MultiProvider(
       providers: [
         Provider<Settings>.value(value: _settings),

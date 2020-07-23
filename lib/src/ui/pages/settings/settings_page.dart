@@ -83,6 +83,7 @@ class _SettingsPageState extends State<SettingsPage> {
               groupValue: _settings.localeKey,
               onChanged: (String value) {
                 _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
               },
               title: 'english'.i18n(),
               value: 'en_us',
@@ -91,6 +92,7 @@ class _SettingsPageState extends State<SettingsPage> {
               groupValue: _settings.localeKey,
               onChanged: (String value) {
                 _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
               },
               title: 'spanish'.i18n(),
               value: 'es_mx',
@@ -99,6 +101,7 @@ class _SettingsPageState extends State<SettingsPage> {
               groupValue: _settings.localeKey,
               onChanged: (String value) {
                 _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
               },
               title: 'portuguese'.i18n(),
               value: 'pt_br',
