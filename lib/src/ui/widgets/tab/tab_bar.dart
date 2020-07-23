@@ -1,6 +1,7 @@
 import 'package:designsystem/src/ui/pages/pages.dart';
 import 'package:designsystem/src/ui/widgets/adaptive/adaptive_scaffold.dart';
 import 'package:designsystem/src/ui/widgets/tab/tab_item.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatefulWidget {
@@ -19,22 +20,22 @@ class _CustomTabBarState extends State<CustomTabBar> {
       builder: (context, index, child) => AdaptiveScaffold(
         tabs: [
           TabItem(
-            title: 'Overview',
+            title: 'overview'.i18n(),
             iconData: Icons.home,
             body: OverviewPage(),
           ),
           TabItem(
-            title: 'Design',
+            title: 'design'.i18n(),
             iconData: Icons.info,
             body: DesignPage(),
           ),
           TabItem(
-            title: 'Components',
+            title: 'components'.i18n(),
             iconData: Icons.contacts,
             body: ComponentsPage(),
           ),
           TabItem(
-            title: 'Settings',
+            title: 'settings'.i18n(),
             iconData: Icons.settings,
             body: SettingsPage(),
           ),

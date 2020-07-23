@@ -1,6 +1,7 @@
 import 'package:designsystem/src/ui/widgets/widgets.dart';
-import 'package:flutter/material.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
+import 'package:flutter/material.dart';
 
 class IntroductionPage extends StatelessWidget {
   static const String route = '/overview/introduction';
@@ -14,14 +15,14 @@ class IntroductionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      pageTitle: 'Introduction',
+      pageTitle: 'introduction'.i18n(),
       hideSwitchMode: hideSwitchMode,
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SelectableText('Introduction').h1(),
+            SelectableText('introduction'.i18n()).h1(),
             Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: SelectableText(

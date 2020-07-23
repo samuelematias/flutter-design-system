@@ -5,4 +5,7 @@ export 'copy_text/copy_text.dart';
 export 'highlight/highlight.dart';
 export 'loading/loading.dart';
 export 'item_tile/item_tile.dart';
+export 'radio/radio.dart';
+export 'restart/restart.dart';
 export 'tab/tab.dart';
+export 'tile/tile.dart';

@@ -1,7 +1,8 @@
 import 'package:designsystem/src/ui/pages/components/buttons/helper/types.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
-import 'package:flutter/material.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
+import 'package:flutter/material.dart';
 
 class ButtonsPage extends StatelessWidget {
   static const String route = '/components/buttons';
@@ -15,7 +16,7 @@ class ButtonsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      pageTitle: 'Buttons',
+      pageTitle: 'buttons'.i18n(),
       hideSwitchMode: hideSwitchMode,
       child: SingleChildScrollView(
         child: Padding(
@@ -23,13 +24,13 @@ class ButtonsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SelectableText('Buttons').h1(),
+              SelectableText('buttons'.i18n()).h1(),
               Padding(
                 padding: EdgeInsets.only(top: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText('Buttons types').h2(),
+                    SelectableText('buttonsTypes'.i18n()).h2(),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                       child: SelectableText(
@@ -52,7 +53,7 @@ class ButtonsPage extends StatelessWidget {
         children: [
           SizedBox(height: 10.0),
           HighlightExample(
-            examplesTitle: 'PrimaryButton Enabled',
+            examplesTitle: 'PrimaryButton ' + 'enabled'.i18n(),
             examples: [
               PrimaryButton(
                 label: 'Click me',
@@ -65,7 +66,7 @@ class ButtonsPage extends StatelessWidget {
           ),
           SizedBox(height: 40.0),
           HighlightExample(
-            examplesTitle: 'PrimaryButton Disabled',
+            examplesTitle: 'PrimaryButton ' + 'disabled'.i18n(),
             examples: [
               PrimaryButton(
                 label: 'Click me',
@@ -80,7 +81,7 @@ class ButtonsPage extends StatelessWidget {
           ),
           SizedBox(height: 40.0),
           HighlightExample(
-            examplesTitle: 'PrimaryButton Loading',
+            examplesTitle: 'PrimaryButton ' + 'loading'.i18n(),
             examples: [
               PrimaryButton(
                 label: 'Click me',
@@ -101,7 +102,7 @@ class ButtonsPage extends StatelessWidget {
         children: [
           SizedBox(height: 10.0),
           HighlightExample(
-            examplesTitle: 'SecondaryButton Enabled',
+            examplesTitle: 'SecondaryButton ' + 'enabled'.i18n(),
             examples: [
               SecondaryButton(
                 label: 'Click me',
@@ -114,7 +115,7 @@ class ButtonsPage extends StatelessWidget {
           ),
           SizedBox(height: 40.0),
           HighlightExample(
-            examplesTitle: 'SecondaryButton Disabled',
+            examplesTitle: 'SecondaryButton ' + 'disabled'.i18n(),
             examples: [
               SecondaryButton(
                 label: 'Click me',
@@ -129,7 +130,7 @@ class ButtonsPage extends StatelessWidget {
           ),
           SizedBox(height: 40.0),
           HighlightExample(
-            examplesTitle: 'SecondaryButton Loading',
+            examplesTitle: 'SecondaryButton ' + 'loading'.i18n(),
             examples: [
               SecondaryButton(
                 label: 'Click me',

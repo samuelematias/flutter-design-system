@@ -1,5 +1,6 @@
 import 'package:designsystem/src/core/constants/constants.dart';
 import 'package:designsystem/src/ui/widgets/tab/tab_item.dart';
+import 'package:designsystem/src/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class AdaptiveScaffold extends StatelessWidget {
@@ -61,7 +62,7 @@ class AdaptiveScaffold extends StatelessWidget {
               ),
               VerticalDivider(width: 0),
               Expanded(
-                child: buildBody(selectedIndex, tabs),
+                child: RestartWidget(child: buildBody(selectedIndex, tabs)),
               ),
             ],
           ),
@@ -86,7 +87,7 @@ class AdaptiveScaffold extends StatelessWidget {
                 destinations: _destinations,
               ),
               Expanded(
-                child: buildBody(selectedIndex, tabs),
+                child: RestartWidget(child: buildBody(selectedIndex, tabs)),
               ),
             ],
           ),
@@ -100,7 +101,8 @@ class AdaptiveScaffold extends StatelessWidget {
         ));
       }
       return Scaffold(
-        body: SafeArea(child: buildBody(selectedIndex, tabs)),
+        body: SafeArea(
+            child: RestartWidget(child: buildBody(selectedIndex, tabs))),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
