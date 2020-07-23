@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings {
-  SharedPreferences _prefs;
+  static SharedPreferences _prefs;
   bool get isReady => _prefs != null;
   final _controller = StreamController<Settings>.broadcast();
   Stream<Settings> get stream => _controller.stream;
@@ -54,6 +54,16 @@ class Settings {
   Future updateThemeMode(ThemeMode value) async {
     if (!isReady) await init();
     await _prefs.setInt(_themeModeKey, value.index);
+    _controller.add(this);
+  }
+
+  static const String _localeKey = 'locale_key';
+  String get localeKey => _prefs?.getString(_localeKey) ?? 'en_us';
+  static String getLocaleKey() => _prefs?.getString(_localeKey) ?? 'en_us';
+  set localeKey(String value) => updateLocaleKey(value);
+  Future updateLocaleKey(String value) async {
+    if (!isReady) await init();
+    await _prefs.setString(_localeKey, value);
     _controller.add(this);
   }
 }
