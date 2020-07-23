@@ -56,6 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 if (!_settings.isDark) {
                   _settings.updateIsSystemTheme(true);
                 }
+                RestartWidget.restartPages(context);
               },
             ),
           ),
@@ -68,6 +69,7 @@ class _SettingsPageState extends State<SettingsPage> {
               if (_settings.isSystemTheme) {
                 _settings.updateIsDark(false);
               }
+              RestartWidget.restartPages(context);
             },
           ),
         ],
