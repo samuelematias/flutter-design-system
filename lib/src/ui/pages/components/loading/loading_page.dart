@@ -1,6 +1,7 @@
 import 'package:designsystem/src/ui/widgets/widgets.dart';
-import 'package:flutter/material.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
+import 'package:flutter/material.dart';
 
 class LoadingPage extends StatelessWidget {
   static const String route = '/components/loading';
@@ -14,7 +15,7 @@ class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      pageTitle: 'Loading',
+      pageTitle: 'loading'.i18n(),
       hideSwitchMode: hideSwitchMode,
       child: SingleChildScrollView(
         child: Padding(
@@ -22,13 +23,13 @@ class LoadingPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SelectableText('Loading').h1(),
+              SelectableText('loading'.i18n()).h1(),
               Padding(
                 padding: EdgeInsets.only(top: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText('Loading types').h2(),
+                    SelectableText('loadingTypes'.i18n()).h2(),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                       child: SelectableText(

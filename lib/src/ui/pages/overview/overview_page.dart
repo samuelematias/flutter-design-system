@@ -1,6 +1,7 @@
 import 'package:designsystem/src/core/constants/constants.dart';
 import 'package:designsystem/src/core/routes/routes.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:flutter/material.dart';
 
 class OverviewPage extends StatefulWidget {
@@ -50,7 +51,7 @@ class _OverviewPageState extends State<OverviewPage> {
 
   Widget buildListView(BoxConstraints dimens, ValueChanged<Routes> onSelected) {
     return CustomAppBar(
-      pageTitle: 'Overview',
+      pageTitle: 'overview'.i18n(),
       child: ListView.separated(
         separatorBuilder: (context, index) => Divider(height: 0),
         itemCount: _items.length,

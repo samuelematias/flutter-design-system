@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
+import 'package:flutter/material.dart';
 
 class ItemTile extends StatelessWidget {
   final IconData icon;
@@ -35,9 +36,9 @@ class ItemTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(title).h3(),
+                    Text(title.i18n()).h3(),
                     Flexible(
-                      child: Text(subtitle).h3(
+                      child: Text(subtitle.i18n()).h3(
                         style: TextStyle(
                           fontWeight: FontWeight.w200,
                         ),

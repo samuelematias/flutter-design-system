@@ -1,7 +1,8 @@
 import 'package:designsystem/src/core/storage/storage.dart';
 import 'package:designsystem/src/ui/widgets/widgets.dart';
-import 'package:flutter/material.dart';
+import 'package:designsystem/src/core/i18n/i18n.dart';
 import 'package:designsystem/src/core/theme/theme.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -12,55 +13,102 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  Settings _settings;
+
+  @override
+  void initState() {
+    super.initState();
+    _settings = context.read<Settings>();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final _settings = Provider.of<Settings>(context, listen: false);
-
     return CustomAppBar(
-      pageTitle: 'Settings',
+      pageTitle: 'settings'.i18n(),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 16.0),
         child: ListView(
           children: [
-            _buildTheme(_settings),
+            _buildTheme(),
+            SizedBox(height: 50),
+            _buildLanguage(),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTheme(Settings settings) => Column(
+  Widget _buildTheme() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: SelectableText('Theme').h1(),
+            child: SelectableText('theme'.i18n()).h1(),
           ),
           Visibility(
-            visible: !settings.isSystemTheme,
+            visible: !_settings.isSystemTheme,
             child: SwitchListTile(
-              title: SelectableText('Dark mode')
+              title: SelectableText('darkMode'.i18n())
                   .h2(style: TextStyle(fontWeight: FontWeight.w200)),
-              value: settings.isDark,
+              value: _settings.isDark,
               onChanged: (value) {
-                settings.updateIsDark(value);
-                if (!settings.isDark) {
-                  settings.updateIsSystemTheme(true);
+                _settings.updateIsDark(value);
+                if (!_settings.isDark) {
+                  _settings.updateIsSystemTheme(true);
                 }
+                RestartWidget.restartPages(context);
               },
             ),
           ),
           SwitchListTile(
-            title: SelectableText('System mode')
+            title: SelectableText('systemMode'.i18n())
                 .h2(style: TextStyle(fontWeight: FontWeight.w200)),
-            value: settings.isSystemTheme,
+            value: _settings.isSystemTheme,
             onChanged: (value) {
-              settings.updateIsSystemTheme(value);
-              if (settings.isSystemTheme) {
-                settings.updateIsDark(false);
+              _settings.updateIsSystemTheme(value);
+              if (_settings.isSystemTheme) {
+                _settings.updateIsDark(false);
               }
+              RestartWidget.restartPages(context);
             },
           ),
         ],
+      );
+
+  Widget _buildLanguage() => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SelectableText('language'.i18n()).h1(),
+            RadioTile<String>(
+              groupValue: _settings.localeKey,
+              onChanged: (String value) {
+                _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
+              },
+              title: 'english'.i18n(),
+              value: 'en_us',
+            ),
+            RadioTile<String>(
+              groupValue: _settings.localeKey,
+              onChanged: (String value) {
+                _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
+              },
+              title: 'spanish'.i18n(),
+              value: 'es_mx',
+            ),
+            RadioTile<String>(
+              groupValue: _settings.localeKey,
+              onChanged: (String value) {
+                _settings.updateLocaleKey(value);
+                RestartWidget.restartPages(context);
+              },
+              title: 'portuguese'.i18n(),
+              value: 'pt_br',
+            ),
+          ],
+        ),
       );
 }
